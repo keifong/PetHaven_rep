@@ -57,7 +57,7 @@ function Admin({ onChangePage }) {
                 </div>
             </div>
 
-            <div className='admin_col'>
+            <div className='admin_row'>
                 {/* Tab Navigation */}
                 <div>
                     <button 
