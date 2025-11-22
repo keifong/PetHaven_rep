@@ -66,7 +66,8 @@ function AdoptionForm({ onChangePage, petName, petBreed }) {
         localStorage.setItem('pendingForms', JSON.stringify(pendingForms));
 
         alert("Submission Successful!");
-        onChangePage(0); // back to home
+        // back to home
+        onChangePage(0);
     };
 
     return (

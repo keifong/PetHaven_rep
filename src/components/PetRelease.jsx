@@ -8,7 +8,7 @@ function PetRelease({ onChangePage }) {
     useEffect(() => {
         window.scrollTo(0, 0);
         
-        // Get the customer's current pet
+        // get current pet info
         const approvedForm = localStorage.getItem('approvedForm');
         if (approvedForm) {
             setCurrentPet(JSON.parse(approvedForm));
@@ -31,7 +31,7 @@ function PetRelease({ onChangePage }) {
 
         const username = localStorage.getItem('username');
         
-        // Check if there's already a pending release request
+        // Check if there is already a pending release request
         const pendingReleases = JSON.parse(localStorage.getItem('pendingReleases')) || [];
         const exists = pendingReleases.find(r => r.username === username);
         
@@ -40,7 +40,7 @@ function PetRelease({ onChangePage }) {
             return;
         }
 
-        // Add to pending releases
+        // Add to pendingReleases array
         pendingReleases.push({
             username,
             petName: currentPet.petName,
@@ -53,7 +53,7 @@ function PetRelease({ onChangePage }) {
         localStorage.setItem('pendingReleases', JSON.stringify(pendingReleases));
         
         alert("Submission has been successful");
-        onChangePage(0); // Navigate to home
+        onChangePage(0);
     };
 
     const backHome = () => {

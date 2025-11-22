@@ -12,11 +12,11 @@ import Admin from './components/Admin';
 
 function App() {
   const [page, setPage] = useState(0);
-  const [petToAdopt, setPetToAdopt] = useState(null); // store selected pet
+  const [petToAdopt, setPetToAdopt] = useState(null); 
 
   const handleChangePage = (pageNum, petData = null) => {
     if (petData) {
-      setPetToAdopt(petData); // save pet for adoption form
+      setPetToAdopt(petData);
     }
     setPage(pageNum);
   };

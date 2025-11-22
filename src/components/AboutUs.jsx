@@ -2,7 +2,7 @@ import '../App.css';
 import logo from '../assets/petHaven_logo_rmbg.png'
 import doggy from '../assets/doggy.png'
 
-// to be used in home page and adopt page
+
 function AboutUs({index}) {
     const toPopulate = [
         {

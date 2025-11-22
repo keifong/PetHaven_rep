@@ -5,7 +5,7 @@ import logo from '../assets/petHaven_logo_rmbg.png';
 function Admin({ onChangePage }) {
     const [adoptionRequests, setAdoptionRequests] = useState([]);
     const [releaseRequests, setReleaseRequests] = useState([]);
-    const [activeTab, setActiveTab] = useState('adoptions'); // 'adoptions' or 'releases'
+    const [activeTab, setActiveTab] = useState('adoptions');
 
     useEffect(() => {
         loadRequests();
@@ -18,11 +18,12 @@ function Admin({ onChangePage }) {
         setReleaseRequests(pendingReleases);
     };
 
+    // approve function
     const approveAdoption = (request) => {
-        // Save approvedForm for customer
+        // approvedForm for customer
         localStorage.setItem('approvedForm', JSON.stringify(request));
 
-        // Remove from pendingForms
+        // remove request from pendingForms since it has been approved
         const remaining = adoptionRequests.filter(f => f.username !== request.username);
         localStorage.setItem('pendingForms', JSON.stringify(remaining));
         setAdoptionRequests(remaining);
@@ -30,11 +31,12 @@ function Admin({ onChangePage }) {
         alert("Adoption Request Approved!");
     };
 
+    // release function
     const approveRelease = (request) => {
-        // Remove the pet from customer's account
+        
         localStorage.removeItem('approvedForm');
 
-        // Remove from pendingReleases
+        // remove request from pendingReleases as release has been approved
         const remaining = releaseRequests.filter(r => r.username !== request.username);
         localStorage.setItem('pendingReleases', JSON.stringify(remaining));
         setReleaseRequests(remaining);
@@ -73,7 +75,6 @@ function Admin({ onChangePage }) {
                     </button>
                 </div>
 
-                {/* Adoption Requests */}
                 {activeTab === 'adoptions' && (
                     <>
                         <h1>Adoption Requests</h1>
@@ -100,7 +101,6 @@ function Admin({ onChangePage }) {
                     </>
                 )}
 
-                {/* Release Requests */}
                 {activeTab === 'releases' && (
                     <>
                         <h1>Release Requests</h1>

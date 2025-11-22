@@ -31,7 +31,7 @@ function LoginRegister({ onChangePage }) {
         getDogImage();
     }, []);
 
-    // Handle input change
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setLogin_content(prev => ({
@@ -39,6 +39,7 @@ function LoginRegister({ onChangePage }) {
             [name]: value
         }));
     };
+
 
     const loginNow = (event) => {
         event.preventDefault();
@@ -85,6 +86,7 @@ function LoginRegister({ onChangePage }) {
         onChangePage(0);  
     };
 
+
     const registerNow = (event) => {
         event.preventDefault();
 
@@ -112,7 +114,7 @@ function LoginRegister({ onChangePage }) {
 
 
     if (loading) {
-        return <div id='loading'><h1>Loading...</h1></div>; // Show a temporary message
+        return <div id='loading'><h1>Loading...</h1></div>; 
     }
 
 
