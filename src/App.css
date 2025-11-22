@@ -650,9 +650,9 @@ html,body {
 }
 
 #btnsAdmin {
-  gap:1rem;
+  margin: 2vw;
 }
 
 #logout_a {
-  width: 10vw;
+  margin-left: 1vw;
 }
