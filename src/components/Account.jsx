@@ -21,7 +21,7 @@ function Account({ onChangePage }) {
 
     const petName = petToAdopt?.petName || "";
     const petBreed = petToAdopt?.petBreed
-        ? petToAdopt.petBreed.charAt(0).toUpperCase() + petToAdopt.petBreed.slice(1)
+        ? petToAdopt.petBreed.charAt(0).toUpperCase() +  petToAdopt.petBreed.slice(1)
         : "";
 
     const isLogin = localStorage.getItem('isLoggedIn');
@@ -57,7 +57,7 @@ function Account({ onChangePage }) {
 
             <h3>My Pet</h3><hr /><br />
             <div id='petsOwned_div'>
-                <h3 id='pName'>{petName}</h3>
+                <h3 id='pName'>{petName}: </h3>
                 <p id='pBreed'>{petBreed}</p>
             </div>
         </div>
