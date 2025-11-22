@@ -8,6 +8,7 @@ function CatCard({ catName, catBreed, catAge, onChangePage }) {
 
     useEffect(() => {
         const getCatImage = async () => {
+            // usage of axios (try catch)
             try {
                 const response = await axios.get(`https://api.thecatapi.com/v1/images/search`);
                 setCatImage(response.data[0].url);
@@ -19,6 +20,7 @@ function CatCard({ catName, catBreed, catAge, onChangePage }) {
 
     }, [catBreed]);
 
+    // ensures the customer has logged in before he can send adoption request
     const isLogin = localStorage.getItem('isLoggedIn');
     const adoptionForm = () => {
         if (isLogin) {

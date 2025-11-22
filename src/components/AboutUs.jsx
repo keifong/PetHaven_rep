@@ -4,6 +4,7 @@ import doggy from '../assets/doggy.png'
 
 
 function AboutUs({index}) {
+    // array arrangement for tidiness
     const toPopulate = [
         {
             imagePath:logo,

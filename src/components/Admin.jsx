@@ -11,6 +11,7 @@ function Admin({ onChangePage }) {
         loadRequests();
     }, []);
 
+    // put all the forms for approval out from localStorage into useState
     const loadRequests = () => {
         const pendingAdoptions = JSON.parse(localStorage.getItem('pendingForms')) || [];
         const pendingReleases = JSON.parse(localStorage.getItem('pendingReleases')) || [];
@@ -75,6 +76,7 @@ function Admin({ onChangePage }) {
                     </button>
                 </div>
 
+                {/* display adoptions UI if user clicks AdoptionRequest tab */}
                 {activeTab === 'adoptions' && (
                     <>
                         <h1>Adoption Requests</h1>
@@ -101,6 +103,8 @@ function Admin({ onChangePage }) {
                     </>
                 )}
 
+
+                {/* display releases UI if user clicks ReleaseRequest tab */}
                 {activeTab === 'releases' && (
                     <>
                         <h1>Release Requests</h1>

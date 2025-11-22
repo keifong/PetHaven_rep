@@ -6,6 +6,7 @@ function AdoptionForm({ onChangePage, petName, petBreed }) {
         window.scrollTo(0, 0);
     }, []);
 
+    // set form attribute data format to put in local storage
     const [adopForm_content, setAdopForm_content] = useState({
         petName: petName || "",
         petBreed: petBreed || "",
@@ -17,6 +18,7 @@ function AdoptionForm({ onChangePage, petName, petBreed }) {
         tnc: false
     });
 
+    // updates the adopForm_content state by using setAdopForm_content, used method instead of individual handling
     const handleInputChange = (event) => {
         const { name, value, type, checked } = event.target;
         setAdopForm_content(prevData => ({
@@ -25,9 +27,11 @@ function AdoptionForm({ onChangePage, petName, petBreed }) {
         }));
     };
 
+    // collecting, converting to JSON and storing in localStorage for global access of form information
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        // data validation
         const errors = [];
         if (!adopForm_content.firstName) errors.push("Fill in First Name");
         if (!adopForm_content.email) errors.push("Fill in Email");
@@ -35,6 +39,7 @@ function AdoptionForm({ onChangePage, petName, petBreed }) {
         if (!adopForm_content.date) errors.push("Fill in the Date");
         if (!adopForm_content.tnc) errors.push("Agree to Terms & Conditions");
 
+        // alerting customers of ALL the errors instead of one by one
         if (errors.length > 0) {
             alert(errors.join("\n"));
             return;
@@ -58,6 +63,7 @@ function AdoptionForm({ onChangePage, petName, petBreed }) {
             return;
         }
 
+        // placing data into pendingForms array, then stringify the array into localStorage
         pendingForms.push({
             ...adopForm_content,
             username,

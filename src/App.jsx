@@ -21,6 +21,7 @@ function App() {
     setPage(pageNum);
   };
 
+  // switch case for page navigation
   let thePage;
   switch (page) {
     case 0: thePage = <Home onChangePage={handleChangePage}/>; break;
@@ -29,6 +30,7 @@ function App() {
     case 3: thePage = <Account onChangePage={handleChangePage}/>; break;
     case 4:
       thePage = <AdoptionForm 
+        //if petToAdopt is null, then petName will be set to undefined instead of null, thanks to ?. 
         onChangePage={handleChangePage}
         petName={petToAdopt?.petName}
         petBreed={petToAdopt?.petBreed}

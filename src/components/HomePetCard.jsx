@@ -8,9 +8,11 @@ function HomePetCard({ dogName, dogBreed, dogAge, dogIndex, onChangePage }) {
 
     useEffect(() => {
         const getDogImage = async () => {
+            // usage of axios (try catch)
             try {
                 const response = await axios.get(`https://dog.ceo/api/breed/${dogBreed.toLowerCase()}/images`);
                 setDogImage(response.data.message[dogIndex]);
+                // additional parameter of dogIndex so to retain the same dog image instead of random generation
             } catch (error) {
                 alert(error);
             }
@@ -22,9 +24,9 @@ function HomePetCard({ dogName, dogBreed, dogAge, dogIndex, onChangePage }) {
 
     const isLogin = localStorage.getItem('isLoggedIn');
 
+    // ensures the customer has logged in before he can send adoption request
     const adoptionForm = () => {
         if (isLogin) {
-            // ✅ Use consistent keys: petName & petBreed
             onChangePage(4, { petName: dogName, petBreed: dogBreed });
         } else {
             alert('Log in first');

@@ -10,12 +10,14 @@ function Home({onChangePage}) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
   
+    // dog information
     const dogs = [
         { dogName: "Rudolf", dogBreed: "retriever", dogAge: "10 Years Old", dogIndex: 4 },
         { dogName: "Melissa", dogBreed: "chihuahua", dogAge: "3 Years Old", dogIndex: 3 },
         { dogName: "Max", dogBreed: "pug", dogAge: "3 Years Old", dogIndex: 3 }
     ];
 
+    // repeat timer for responsive HomePetCard that cycles through 3 dogs
     useEffect(() => {
         const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % dogs.length);
@@ -28,6 +30,7 @@ function Home({onChangePage}) {
         onChangePage(1)
     }
     
+    // redirects user to about us on button click
     const scrollAU = () => {
         console.log("clicked")
         aboutUsRef.current?.scrollIntoView({
@@ -65,15 +68,14 @@ function Home({onChangePage}) {
             <div className='section_div' id='reviewsSection'>
             <Reviews></Reviews>
             </div>
-            {/* <div className='section_div' id='aboutUs_div'> */}
             <div id='aboutUs_div' ref={aboutUsRef}>
                 <div className='section_div'>
                 <AboutUs index={0}></AboutUs>
+                {/* iframe adn google embed link taken from google maps */}
                 <div id='findUs'>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.655897715661!2d103.83580458546606!3d1.3831001950039132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da16bf60de43cf%3A0xfe013c42e723af12!2s621%20Ang%20Mo%20Kio%20Ave%209%2C%20Block%20621%2C%20Singapore%20560621!5e0!3m2!1sen!2ssg!4v1763768772695!5m2!1sen!2ssg" id='map' loading="lazy" ></iframe>
                 </div>
                 
-
                 </div>
                 <button className='btn2' onClick={petsPage}>See Our Pets</button>
             </div>

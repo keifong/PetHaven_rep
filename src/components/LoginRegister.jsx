@@ -31,7 +31,7 @@ function LoginRegister({ onChangePage }) {
         getDogImage();
     }, []);
 
-
+    // same form handling as AdoptionForm
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setLogin_content(prev => ({
@@ -76,13 +76,7 @@ function LoginRegister({ onChangePage }) {
 
         // directed to either customer or admin
         localStorage.setItem('isLoggedIn', true)
-        // if (login_content.username == 'admin'){
-        //     onChangePage(6); 
-        // }
-        // else {
-        //     onChangePage(0); 
-        // }
-        // alert("Logged in successfully!");
+
         onChangePage(0);  
     };
 
@@ -95,6 +89,7 @@ function LoginRegister({ onChangePage }) {
         if (!login_content.username) errorArray.push("Type in your Username");
         if (!login_content.password) errorArray.push("Type in your password");
 
+        // printing out all errors at once instead of 1 by 1
         if (errorArray.length > 0) {
             alert(errorArray.join('\n'));
             return;
@@ -105,14 +100,11 @@ function LoginRegister({ onChangePage }) {
             localStorage.setItem('username', login_content.username );
             localStorage.setItem('password', login_content.password);
         }
-        
-        
-        
 
         alert("Registration Complete!")
     };
 
-
+    // loading section that covers the entire window, making it seem like a different page
     if (loading) {
         return <div id='loading'><h1>Loading...</h1></div>; 
     }

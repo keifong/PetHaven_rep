@@ -13,6 +13,7 @@ function Pets({onChangePage}) {
         window.scrollTo(0, 0);
     }, []);
 
+    // dog data
     const dogs = [
         {dogName:"Luna", dogBreed:"pembroke", dogAge:"2", dogIndex: 4},
         {dogName:"Bella", dogBreed:"pembroke", dogAge:"1", dogIndex: 6},
@@ -23,7 +24,7 @@ function Pets({onChangePage}) {
         {dogName:"Navy", dogBreed:"pug", dogAge:"3", dogIndex: 4},
     ]
 
-    // add cats as well
+    // cats data
     const cats = [
         {catName:"Willow", catBreed:"Maine Coon", catAge:"2"},
         {catName:"Luna", catBreed:"Siamese", catAge:"1"},
@@ -34,6 +35,7 @@ function Pets({onChangePage}) {
         {catName:"Nala", catBreed:"Sphynx", catAge:"3"},
     ]
 
+    // toggling the css display for grid
     const buttonFunction = () => {
         setVisibility(true)
     }

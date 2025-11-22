@@ -9,6 +9,7 @@ function Account({ onChangePage }) {
         password: '' 
     });
 
+    // gathering information adn populating the inputs and pet section upon page loadup
     useEffect(() => {
         window.scrollTo(0, 0);
         const username = localStorage.getItem('username') || '';
@@ -24,6 +25,7 @@ function Account({ onChangePage }) {
         ? petToAdopt.petBreed.charAt(0).toUpperCase() +  petToAdopt.petBreed.slice(1)
         : "";
 
+    // login login for login/logout button
     const isLogin = localStorage.getItem('isLoggedIn');
     const redirectLogin = () => {
         if (isLogin) {
@@ -41,6 +43,7 @@ function Account({ onChangePage }) {
                 <button className='btn2' onClick={redirectLogin}>{loginBtnTitle}</button>
             </div>
 
+            {/* user details section */}
             <h3>Profile</h3><hr /><br />
             <div id='profileDeets'>
                 <div className='inputDiv_row'>
@@ -55,6 +58,7 @@ function Account({ onChangePage }) {
                 </div>
             </div>
 
+            {/* pet display section */}
             <h3>My Pet</h3><hr /><br />
             <div id='petsOwned_div'>
                 <h3 id='pName'>{petName}: </h3>

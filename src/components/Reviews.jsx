@@ -45,6 +45,7 @@ function Reviews() {
         }
     ]
 
+    // usage of modulus to make it look like the carousell is running in a loop
     const handleNext = () => {
         setCurrentIndex((prevIndex) => 
             (prevIndex + 1) % reviews.length
