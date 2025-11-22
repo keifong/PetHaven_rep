@@ -7,7 +7,7 @@ import PetRelease from './components/PetRelease';
 import Account from './components/Account';
 import NavBar from './components/NavBar';
 import AdoptionForm from './components/AdoptionForm';
-import LoginRegister from './components/loginRegister';
+import LoginRegister from './components/LoginRegister';
 import Admin from './components/Admin';
 
 function App() {
