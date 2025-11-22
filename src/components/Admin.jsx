@@ -81,7 +81,7 @@ function Admin({ onChangePage }) {
                         <div className='admin_row' id='details'>
                             {adoptionRequests.length > 0 ? (
                                 adoptionRequests.map((request, index) => (
-                                    <div key={index} style={{ marginBottom: '20px', padding: '15px', border: '1px solid #ccc', borderRadius: '8px' }}>
+                                    <div key={index} >
                                         <h3>Customer: {request.username}</h3>
                                         <p><strong>Pet:</strong> {request.petName}</p>
                                         <p><strong>Breed:</strong> {request.petBreed}</p>
@@ -107,7 +107,7 @@ function Admin({ onChangePage }) {
                         <div className='admin_row' id='details'>
                             {releaseRequests.length > 0 ? (
                                 releaseRequests.map((request, index) => (
-                                    <div key={index} style={{ marginBottom: '20px', padding: '15px', border: '1px solid #ccc', borderRadius: '8px' }}>
+                                    <div key={index} >
                                         <h3>Customer: {request.username}</h3>
                                         <p><strong>Pet Name:</strong> {request.petName}</p>
                                         <p><strong>Breed:</strong> {request.petBreed}</p>
