@@ -57,7 +57,7 @@ function Reviews() {
             <div id="review_div">
                 <div id="revTitle">
                     <h3>{reviews[currentIndex].title}</h3>
-                    <img id='stars5_img' src="src\assets\stars5_rmbg.png"/>
+                    <img id='stars5_img' src="./assets/stars5_rmbg.png"/>
                 </div>
                 
                 <p>{reviews[currentIndex].elaboration}</p>
