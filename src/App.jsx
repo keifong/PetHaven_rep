@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Pets from './components/Pets';
 import PetRelease from './components/PetRelease';
 import Account from './components/Account';
-import NavBar from './components/navBar';
+import NavBar from './components/NavBar';
 import AdoptionForm from './components/AdoptionForm';
 import LoginRegister from './components/loginRegister';
 import Admin from './components/Admin';
