@@ -58,7 +58,7 @@ function Admin({ onChangePage }) {
 
             <div className='admin_col'>
                 {/* Tab Navigation */}
-                <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+                <div>
                     <button 
                         id='adoptReq_btn' 
                         className={activeTab === 'adoptions' ? 'btn' : 'btn2'}
