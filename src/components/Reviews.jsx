@@ -4,7 +4,7 @@
 // this also shows the Good reviews and the good works Pet Haven has done (Straits time news, Mothership News)
 
 import { useState } from "react";
-import stars5 from '../assets/stars5_rmbg.png'
+import stars5 from 'public/stars5_rmbg.png'
 
 function Reviews() {
     const [currentIndex, setCurrentIndex] = useState(0);
