@@ -57,23 +57,25 @@ function Admin({ onChangePage }) {
                 </div>
             </div>
 
-            <div className='admin_row'>
+            <div className='admin_col'>
                 {/* Tab Navigation */}
                 <div>
-                    <button 
-                        id='adoptReq_btn' 
-                        className={activeTab === 'adoptions' ? 'btn' : 'btn2'}
-                        onClick={() => setActiveTab('adoptions')}
-                    >
-                        Adoption Requests ({adoptionRequests.length})
-                    </button>
-                    <button 
-                        id='relReq_btn' 
-                        className={activeTab === 'releases' ? 'btn' : 'btn2'}
-                        onClick={() => setActiveTab('releases')}
-                    >
-                        Release Requests ({releaseRequests.length})
-                    </button>
+                    <div className='admin_row'>
+                        <button 
+                            id='adoptReq_btn' 
+                            className={activeTab === 'adoptions' ? 'btn' : 'btn2'}
+                            onClick={() => setActiveTab('adoptions')}
+                        >
+                            Adoption Requests ({adoptionRequests.length})
+                        </button>
+                        <button 
+                            id='relReq_btn' 
+                            className={activeTab === 'releases' ? 'btn' : 'btn2'}
+                            onClick={() => setActiveTab('releases')}
+                        >
+                            Release Requests ({releaseRequests.length})
+                        </button>
+                    </div>
                 </div>
 
                 {/* display adoptions UI if user clicks AdoptionRequest tab */}
