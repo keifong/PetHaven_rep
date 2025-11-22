@@ -53,14 +53,14 @@ function Admin({ onChangePage }) {
                 <img src={logo} alt="Logo" />
                 <div className='admin_row' id='headerDeets'>
                     <h1>Admin Page</h1>
-                    <button className='btn2' onClick={redirect}>Logout</button>
+                    <button className='btn2' id='logout_a' onClick={redirect}>Logout</button>
                 </div>
             </div>
 
             <div className='admin_col'>
                 {/* Tab Navigation */}
                 <div>
-                    <div className='admin_row'>
+                    <div className='admin_row' id='btnsAdmin'>
                         <button 
                             id='adoptReq_btn' 
                             className={activeTab === 'adoptions' ? 'btn' : 'btn2'}

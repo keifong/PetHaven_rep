@@ -648,3 +648,11 @@ html,body {
     background: white;
     width: 350px;
 }
+
+#btnsAdmin {
+  gap:1rem;
+}
+
+#logout_a {
+  width: 10vw;
+}
