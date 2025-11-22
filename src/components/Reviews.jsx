@@ -4,7 +4,6 @@
 // this also shows the Good reviews and the good works Pet Haven has done (Straits time news, Mothership News)
 
 import { useState } from "react";
-import stars5 from 'public/stars5_rmbg.png'
 
 function Reviews() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,7 +57,7 @@ function Reviews() {
             <div id="review_div">
                 <div id="revTitle">
                     <h3>{reviews[currentIndex].title}</h3>
-                    <img id='stars5_img' src={stars5}/>
+                    <img id='stars5_img' src="/stars5_rmbg.png"/>
                 </div>
                 
                 <p>{reviews[currentIndex].elaboration}</p>
